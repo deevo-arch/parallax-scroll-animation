@@ -79,3 +79,94 @@ text {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  /* Scroll Down text - make smaller on mobile */
+  #info text:first-child {
+    font-size: 24px !important;
+    letter-spacing: 4px !important;
+  }
+  
+  #info text:nth-child(2) {
+    font-size: 10px !important;
+    letter-spacing: 1px !important;
+  }
+  
+  /* Final options heading - smaller on mobile */
+  #final-options text:first-child {
+    font-size: 18px !important;
+    letter-spacing: 2px !important;
+  }
+  
+  /* Option buttons - smaller and stacked better on mobile */
+  #deevo-option rect,
+  #xeonweb-option rect {
+    width: 280px !important;
+    height: 50px !important;
+    x: 235px !important;
+  }
+  
+  #deevo-option text:first-child,
+  #xeonweb-option text:first-child {
+    font-size: 13px !important;
+    letter-spacing: 0.5px !important;
+  }
+  
+  #deevo-option text:nth-child(3),
+  #xeonweb-option text:nth-child(3) {
+    font-size: 10px !important;
+    letter-spacing: 0.3px !important;
+  }
+  
+  /* Adjust button positions for mobile */
+  #deevo-option {
+    transform: translateY(10px);
+  }
+  
+  #xeonweb-option {
+    transform: translateY(10px);
+  }
+  
+  /* Fullscreen button - smaller on mobile */
+  .btn {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.6rem;
+    right: 10px;
+    bottom: 3%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Extra small mobile devices */
+  #info text:first-child {
+    font-size: 20px !important;
+    letter-spacing: 3px !important;
+  }
+  
+  #info text:nth-child(2) {
+    font-size: 9px !important;
+  }
+  
+  #final-options text:first-child {
+    font-size: 16px !important;
+    letter-spacing: 1.5px !important;
+  }
+  
+  #deevo-option rect,
+  #xeonweb-option rect {
+    width: 260px !important;
+    height: 45px !important;
+    x: 245px !important;
+  }
+  
+  #deevo-option text:first-child,
+  #xeonweb-option text:first-child {
+    font-size: 12px !important;
+  }
+  
+  #deevo-option text:nth-child(3),
+  #xeonweb-option text:nth-child(3) {
+    font-size: 9px !important;
+  }
+}
