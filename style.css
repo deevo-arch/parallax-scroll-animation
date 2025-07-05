@@ -27,7 +27,7 @@ svg {
 
 .scrollElement {
   position: absolute;
-  height: 6000px;
+  height: 8000px;
   width: 100px;
   top: 0;
   z-index: 0;
@@ -44,7 +44,7 @@ svg {
   padding: 0.5rem 0.7em;
   background-color: transparent;
   color: #ffffff;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   cursor: pointer;
   transition: all 0.3s;
@@ -60,4 +60,22 @@ svg {
 .btn:hover {
   background: #ffffff;
   color: #1b1734;
+}
+
+/* Enhanced styling for clickable options */
+#deevo-option,
+#xeonweb-option {
+  transition: all 0.3s ease;
+}
+
+#deevo-option:hover,
+#xeonweb-option:hover {
+  transform: translateY(-2px);
+  filter: drop-shadow(0 8px 20px rgba(255,255,255,0.1));
+}
+
+/* Smooth font rendering */
+text {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

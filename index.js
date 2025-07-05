@@ -195,9 +195,8 @@ scene3.fromTo("#h3-5", { y: 1000 }, { y: -550 }, 0.12);
 //stars
 scene3.fromTo("#stars", { opacity: 0 }, { opacity: 0.5, y: -500 }, 0);
 
-// Scroll Back text
-scene3.fromTo("#arrow2", { opacity: 0 }, { opacity: 0.7, y: -710 }, 0.25);
-scene3.fromTo("#text2", { opacity: 0 }, { opacity: 0.7, y: -710 }, 0.3);
+// Final options appear
+scene3.fromTo("#final-options", { opacity: 0 }, { opacity: 1, y: -600 }, 0.25);
 
 //gradient value change
 scene3.to("#bg2-grad", { attr: { cy: 600 } }, 0);
@@ -222,6 +221,9 @@ gsap.to("#fstar", {
   },
 });
 
+// Extended scroll area
+document.querySelector('.scrollElement').style.height = '8000px';
+
 //reset scrollbar position after refresh
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
@@ -229,15 +231,81 @@ window.onbeforeunload = function () {
 
 let fullscreen;
 let fsEnter = document.getElementById("fullscr");
-fsEnter.addEventListener("click", function (e) {
-  e.preventDefault();
-  if (!fullscreen) {
-    fullscreen = true;
-    document.documentElement.requestFullscreen();
-    fsEnter.innerHTML = "Exit Fullscreen";
-  } else {
-    fullscreen = false;
-    document.exitFullscreen();
-    fsEnter.innerHTML = "Go Fullscreen";
-  }
-});
+if (fsEnter) {
+  fsEnter.addEventListener("click", function (e) {
+    e.preventDefault();
+    if (!fullscreen) {
+      fullscreen = true;
+      document.documentElement.requestFullscreen();
+      fsEnter.innerHTML = "Exit Fullscreen";
+    } else {
+      fullscreen = false;
+      document.exitFullscreen();
+      fsEnter.innerHTML = "Go Fullscreen";
+    }
+  });
+}
+
+// Add hover effects for the options
+const deevoOption = document.getElementById('deevo-option');
+const xeonwebOption = document.getElementById('xeonweb-option');
+
+if (deevoOption) {
+  deevoOption.addEventListener('mouseenter', function() {
+    gsap.to(this.querySelector('rect'), { 
+      fill: "rgba(255,255,255,0.25)", 
+      stroke: "rgba(255,255,255,0.6)",
+      duration: 0.3 
+    });
+    gsap.to(this.querySelectorAll('text'), { 
+      fill: "#ffffff", 
+      duration: 0.3 
+    });
+  });
+  
+  deevoOption.addEventListener('mouseleave', function() {
+    gsap.to(this.querySelector('rect'), { 
+      fill: "rgba(255,255,255,0.1)", 
+      stroke: "rgba(255,255,255,0.3)",
+      duration: 0.3 
+    });
+    gsap.to(this.querySelectorAll('text')[0], { 
+      fill: "white", 
+      duration: 0.3 
+    });
+    gsap.to(this.querySelectorAll('text')[1], { 
+      fill: "rgba(255,255,255,0.8)", 
+      duration: 0.3 
+    });
+  });
+}
+
+if (xeonwebOption) {
+  xeonwebOption.addEventListener('mouseenter', function() {
+    gsap.to(this.querySelector('rect'), { 
+      fill: "rgba(255,255,255,0.25)", 
+      stroke: "rgba(255,255,255,0.6)",
+      duration: 0.3 
+    });
+    gsap.to(this.querySelectorAll('text'), { 
+      fill: "#ffffff", 
+      duration: 0.3 
+    });
+  });
+  
+  xeonwebOption.addEventListener('mouseleave', function() {
+    gsap.to(this.querySelector('rect'), { 
+      fill: "rgba(255,255,255,0.1)", 
+      stroke: "rgba(255,255,255,0.3)",
+      duration: 0.3 
+    });
+    gsap.to(this.querySelectorAll('text')[0], { 
+      fill: "white", 
+      duration: 0.3 
+    });
+    gsap.to(this.querySelectorAll('text')[1], { 
+      fill: "rgba(255,255,255,0.8)", 
+      duration: 0.3 
+    });
+  });
+}
